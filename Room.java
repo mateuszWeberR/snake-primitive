@@ -120,6 +120,8 @@ public class Room {
             System.out.println();
         }
         System.out.println();
+        System.out.println();
+        System.out.println();
     }
 
     /**
