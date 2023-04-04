@@ -114,10 +114,20 @@ public class Room {
         matrix[mouse.getY()][mouse.getX()] = 3;
 
         // Display it all on the screen
-        String[] symbols = {"   ", " o ", " O ", "^_^", "RIP"};
-        for (int y = 0; y < height; y++) {
-            for (int x = 0; x < width; x++) {
-                System.out.print(symbols[matrix[y][x]]);
+        String[] symbols = {"   ", " o ", " 0 ", "^_^", "RIP"};
+        for (int y = -1; y <= height; y++) {
+            for (int x = -1; x <= width; x++) {
+                if (y == -1 && x == -1 || y == -1 && x == width || y == height && x == -1 || y == height && x == height) {
+                    System.out.print("*");
+                } else if (y == -1) {
+                    System.out.print("___");
+                } else if (y == height) {
+                    System.out.print("---");
+                } else if (x == -1 || x == width) {
+                    System.out.print("|");
+                } else {
+                    System.out.print(symbols[matrix[y][x]]);
+                }
             }
             System.out.println();
         }
