@@ -12,6 +12,7 @@ public class Room {
     private int height;
     private Snake snake;
     private Mouse mouse;
+    static int score = 0;
 
     public Room(int width, int height, Snake snake) {
         this.width = width;
@@ -90,6 +91,7 @@ public class Room {
 
         // Display "Game Over"
         System.out.println("Game Over!");
+        System.out.println("Your Score Is: " + score);
     }
 
     /**
@@ -112,7 +114,7 @@ public class Room {
         matrix[mouse.getY()][mouse.getX()] = 3;
 
         // Display it all on the screen
-        String[] symbols = {" . ", " x ", " X ", "^_^", "RIP"};
+        String[] symbols = {"   ", " o ", " O ", "^_^", "RIP"};
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
                 System.out.print(symbols[matrix[y][x]]);
@@ -129,6 +131,7 @@ public class Room {
      */
     public void eatMouse() {
         createMouse();
+        score++;
     }
 
     /**
@@ -151,7 +154,7 @@ public class Room {
         game.run();
     }
 
-    private int initialDelay = 520;
+    private int initialDelay = 420;
     private int delayStep = 20;
 
     /**
