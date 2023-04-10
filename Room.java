@@ -71,16 +71,16 @@ public class Room {
                 if (event.getKeyChar() == 'q') return;
 
                 // If "left arrow", then move the figure to the left
-                if (event.getKeyCode() == KeyEvent.VK_A)
+                if (event.getKeyCode() == KeyEvent.VK_LEFT)
                     snake.setDirection(SnakeDirection.LEFT);
                     // If "right arrow", then move the figure to the right
-                else if (event.getKeyCode() == KeyEvent.VK_D)
+                else if (event.getKeyCode() == KeyEvent.VK_RIGHT)
                     snake.setDirection(SnakeDirection.RIGHT);
                     // If "up arrow", then move the figure up
-                else if (event.getKeyCode() == KeyEvent.VK_W)
+                else if (event.getKeyCode() == KeyEvent.VK_UP)
                     snake.setDirection(SnakeDirection.UP);
                     // If "down arrow", then move the figure down
-                else if (event.getKeyCode() == KeyEvent.VK_S)
+                else if (event.getKeyCode() == KeyEvent.VK_DOWN)
                     snake.setDirection(SnakeDirection.DOWN);
             }
 
